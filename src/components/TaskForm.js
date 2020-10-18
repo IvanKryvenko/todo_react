@@ -13,15 +13,20 @@ function TaskForm(props) {
 
     function onAddTask(task) {
         props.onAddingTask(task);
+        setText('');
+    }
+
+    function prvd(e) {
+        e.preventDefault();
     }
 
     return (
-        <div className="form">
+        <form onSubmit={prvd}>
             <label>
                 <input className="input-task-text" type="text" value={text} onChange={e => setText(e.target.value)} />
             </label>
             <input className="button-add-task" type="submit" value="Add task" onClick={() => onAddTask(new Task(text))} />
-        </div>
+        </form>
     );
 }
 

@@ -6,18 +6,7 @@ import Task from './Task.component';
 
 function BodyOfList(props) {
 
-    const [taskArray, setTask] = useState([
-        {
-            text: "Some task",
-            isComplete: false,
-            id: 2341
-        },
-        {
-            text: "Some task2",
-            isComplete: false,
-            id: 2343
-        }
-    ]);
+    const [taskArray, setTask] = useState([]);
 
     let onArrayChange = (task) => {
         setTask([...taskArray, task]);

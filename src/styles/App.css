@@ -63,7 +63,7 @@ content {
   flex-direction: column;
 }
 
-.form {
+form {
   padding: 4%;
   display: flex;
   justify-content: space-between;
@@ -87,6 +87,13 @@ label {
 
 .task {
   padding: 20px;
-  margin-top: 5px;
-  background-color: #FFF287;
+  margin: 5px;
+}
+
+.task-button,
+.task-button:active,
+.task-button:focus {
+  border: none;
+  outline: none;
+  margin: 2px;
 }
