@@ -63,7 +63,7 @@ content {
   flex-direction: column;
 }
 
-form {
+.form {
   padding: 4%;
   display: flex;
   justify-content: space-between;

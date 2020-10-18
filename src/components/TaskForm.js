@@ -16,12 +16,12 @@ function TaskForm(props) {
     }
 
     return (
-        <form>
+        <div className="form">
             <label>
                 <input className="input-task-text" type="text" value={text} onChange={e => setText(e.target.value)} />
             </label>
             <input className="button-add-task" type="submit" value="Add task" onClick={() => onAddTask(new Task(text))} />
-        </form>
+        </div>
     );
 }
 

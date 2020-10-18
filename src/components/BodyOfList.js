@@ -20,7 +20,7 @@ function BodyOfList(props) {
     ]);
 
     let onArrayChange = (task) => {
-        setTask(taskArray.push(task));
+        setTask([...taskArray, task]);
     }
 
     let taskList = taskArray.map((element) => 
