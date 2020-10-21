@@ -26,7 +26,7 @@ function BodyOfList(props) {
         // editedTask.text = text;
     }
 
-    let onComplite = (id) => {
+    let onComplete = (id) => {
         let arrayCopy = taskArray;
         let complitedTaskIndex = arrayCopy.findIndex(item => item.id === id);
         arrayCopy[complitedTaskIndex].isComplete = !arrayCopy[complitedTaskIndex].isComplete;
@@ -35,7 +35,7 @@ function BodyOfList(props) {
 
 
     let taskList = taskArray.map((element) => 
-        <Task text={element.text} id={element.id} key={element.id} state={element.isComplete} onDelete={onTaskDelete} onEdit={onTaskEdit} complete={onComplite} />
+        <Task text={element.text} id={element.id} key={element.id} state={element.isComplete} onDelete={onTaskDelete} onEdit={onTaskEdit} complete={onComplete} />
     ); 
  
 
