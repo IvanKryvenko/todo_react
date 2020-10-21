@@ -19,15 +19,14 @@ function BodyOfList(props) {
     }
 
     let onTaskEdit = (id, text) => {
-        let arrayCopy = taskArray;
+        let arrayCopy = [...taskArray];
         let editedTaskIndex = arrayCopy.findIndex(item => item.id === id);
         arrayCopy[editedTaskIndex].text = text;
         setTask(arrayCopy);
-        // editedTask.text = text;
     }
 
     let onComplete = (id) => {
-        let arrayCopy = taskArray;
+        let arrayCopy = [...taskArray];
         let complitedTaskIndex = arrayCopy.findIndex(item => item.id === id);
         arrayCopy[complitedTaskIndex].isComplete = !arrayCopy[complitedTaskIndex].isComplete;
         setTask(arrayCopy);
@@ -37,7 +36,6 @@ function BodyOfList(props) {
     let taskList = taskArray.map((element) => 
         <Task text={element.text} id={element.id} key={element.id} state={element.isComplete} onDelete={onTaskDelete} onEdit={onTaskEdit} complete={onComplete} />
     ); 
- 
 
     return (
         <content>
@@ -50,8 +48,6 @@ function BodyOfList(props) {
                     array={taskArray}
                     onAddingTask={onArrayChange} />
                     {taskList}
-                    <button>Completed Tasks</button>
-                    <button>All Tasks</button>
                 </div>
                 <div className="col-xl-3 col-lg-3 col-md-2">
 

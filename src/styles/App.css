@@ -97,3 +97,11 @@ label {
   outline: none;
   margin: 2px;
 }
+
+.filter-button,
+.filter-button:active,
+.filter-button:focus {
+  border: none;
+  outline: none;
+  margin: 2px;
+}

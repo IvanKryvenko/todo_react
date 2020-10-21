@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 let Task = (props) => {
 
     let [itEditing, onEdit] = useState(false);
+    let [valueOfTask, setValue] = useState(props.text);
 
     let deleteTask = (id) => {
         props.onDelete(id);
@@ -24,20 +25,20 @@ let Task = (props) => {
 
     if(!itEditing) {
         return (
-            <div id={props.id} className="task" style={!props.isComplete ? {backgroundColor: '#FFB079'} : {backgroundColor: '#D9FE85'}}>
+            <div id={props.id} className="task" style={!props.state ? {backgroundColor: '#FFB079'} : {backgroundColor: '#D9FE85'}}>
                 <p>{props.text}</p>
                 <button className="task-button" onClick={() => complete(props.id)}>Complete</button>
                 <button className="task-button" onClick={() => deleteTask(props.id)}>Delete</button>
-                <button className="task-button" onClick={() => taskEdit(props.id, props.text)}>Edit</button>
+                <button className="task-button" onClick={() => onEdit(!itEditing)}>Edit</button>
             </div>  
         )
     } else {
         return (
-            <div id={props.id} className="task" style={!props.isComplete ? {backgroundColor: '#FFB079'} : {backgroundColor: '#D9FE85'}}>
-                <input className="input-task-text" type="text" value={props.text} onClick={(e) => taskEdit(props.id, e.target.value)} />
+            <div id={props.id} className="task" style={!props.state ? {backgroundColor: '#FFB079'} : {backgroundColor: '#D9FE85'}}>
+                <input className="input-task-text" type="text" value={valueOfTask} onChange={(e) => setValue(e.target.value)} />
                 <button className="task-button" onClick={() => complete(props.id)}>Complete</button>
                 <button className="task-button" onClick={() => deleteTask(props.id)}>Delete</button>
-                <button className="task-button" onClick={() => taskEdit(props.id, props.text)}>Done</button>
+                <button className="task-button" onClick={() => taskEdit(props.id, valueOfTask)}>Done</button>
             </div>
         )
     }  
